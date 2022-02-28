@@ -35,9 +35,34 @@ fn main() {
     let mut number = 3;
 
     while number !=0 {
-        println!("{}!", number);
-
+        println!("{}!", number);_
         number -= 1;
     }
     println!("LIFTOFF!!!");
+
+    //Loop through a collection with for.println!
+    //This is slow as the condition had to be checked every run
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0;
+    while index < 5 {
+        println!("the value is : {}", a[index]);
+
+        index += 1;
+    }
+
+    // A more concise alternative is this: 
+    // We also increase the safety as we dont need to check the size of the array
+    // This is the most common way to write a loop in rust
+    let a = [10,20,30,40,50];
+
+    for element in a {
+        println!("the value is: {}", element);
+    }
+
+    // We can use a for loop to do the countdown more efficiently too
+    for number in (1..4).rev() {
+        println!("{}!", number);
+    }
+    println!("LIFTOFF!!!");
+
 }
